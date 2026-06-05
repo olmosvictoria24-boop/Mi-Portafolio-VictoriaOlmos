@@ -1,0 +1,561 @@
+/* =========================
+VARIABLES PREMIUM (Modernizadas)
+========================= */
+:root {
+    /* MODO CLARO - Estilo Cristal Limpio */
+    --color-fondo: #F3EEF5; 
+    --color-seccion-alt: #EBE4EE;
+    --color-tarjeta: rgba(255, 255, 255, 0.7); 
+    --color-texto: #3D323E; 
+    --color-primario: #5A435A; 
+    --color-titulos: #805376; 
+    --color-secundario: #C6A6C9; 
+    --color-borde: rgba(128, 83, 118, 0.15); /* Bordes más definidos */
+    --sombra-premium: 0 10px 40px rgba(128, 83, 118, 0.06);
+    --degradado-wow: linear-gradient(135deg, #805376 0%, #5A435A 100%);
+    --radio-esquinas: 24px;
+    --blur-cristal: blur(16px);
+}
+
+body.dark-mode {
+    /* MODO OSCURO - Cyberpunk Sofisticado */
+    --color-fondo: #1A121B; 
+    --color-seccion-alt: #130C14;
+    --color-tarjeta: rgba(51, 39, 53, 0.5); 
+    --color-texto: #F3EEF5; 
+    --color-primario: #C6A6C9; 
+    --color-titulos: #E4C9D9; 
+    --color-secundario: #805376;
+    --color-borde: rgba(198, 166, 201, 0.15);
+    --sombra-premium: 0 10px 40px rgba(0, 0, 0, 0.4);
+    --degradado-wow: linear-gradient(135deg, #E4C9D9 0%, #805376 100%);
+    --blur-cristal: blur(20px);
+}
+
+/* =========================
+RESET & AJUSTES BASE (Pantalla Completa Real)
+========================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+    width: 100%; 
+    transition: background-color 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+h1, h2, h3 {
+    font-family: 'Lora', serif;
+}
+
+/* Decoraciones ambientales gigantes */
+body::before, body::after {
+    content: '';
+    position: fixed;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    filter: blur(120px);
+    z-index: -1;
+    opacity: 0.18;
+    pointer-events: none;
+}
+body::before { top: -10%; right: -5%; background: #C6A6C9; }
+body::after { bottom: -5%; left: -5%; background: #805376; }
+
+/* =========================
+HEADER FLOTANTE ASIMÉTRICO
+========================= */
+header {
+    position: fixed;
+    top: 25px;
+    right: 5%; 
+    width: auto;
+    background: var(--color-tarjeta);
+    backdrop-filter: var(--blur-cristal);
+    -webkit-backdrop-filter: var(--blur-cristal);
+    border: 1px solid var(--color-borde);
+    border-radius: 50px;         
+    z-index: 1000;
+    box-shadow: var(--sombra-premium);
+    transition: all 0.3s ease;
+}
+
+.nav-contenedor {
+    padding: 8px 30px;
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+nav ul {
+    display: flex;
+    align-items: center;
+    gap: 25px;                  
+    list-style: none;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--color-texto);
+    font-weight: 500;
+    font-size: 0.85rem;         
+    letter-spacing: 1px;
+    position: relative;
+    padding: 5px 0;
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--degradado-wow);
+    transition: width 0.3s ease;
+}
+nav a:hover::after {
+    width: 100%;
+}
+
+.icono-perfil {
+    width: 34px;                
+    height: 34px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1.5px solid var(--color-secundario);
+}
+
+.btn-theme {
+    background: none;
+    border: none;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    display: flex;
+    align-items: center;
+    color: var(--color-texto);
+}
+.btn-theme:hover {
+    transform: rotate(20deg) scale(1.1);
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.4rem;
+    cursor: pointer;
+    color: var(--color-texto);
+}
+
+/* =========================
+SECCIÓN INICIO: ELEGANTE Y EQUILIBRADA (Corregida)
+========================= */
+#inicio {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100vw;                     
+    max-width: 1200px !important;       
+    min-height: 100vh;                
+    margin: 0 auto;
+    padding: 0 5%;
+}
+
+/* Bloque Izquierdo: Mensaje */
+#inicio .texto {
+    flex: 1.2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;          
+    padding-right: 5%;
+    z-index: 10;
+}
+
+#inicio .texto::before {
+    content: '// STUDENT & DEVELOPER';
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 800;
+    letter-spacing: 4px;
+    color: var(--color-titulos);
+    margin-bottom: 15px;
+}
+
+#inicio h1 {
+    font-size: 4.5rem;                  
+    line-height: 0.95;
+    letter-spacing: -2px;
+    margin-bottom: 25px;
+    font-weight: 900;
+    color: var(--color-texto);
+}
+
+.typing-container {
+    display: block;
+}
+
+.destaque {
+    display: inline-block;
+    background: var(--degradado-wow);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    border-right: 4px solid var(--color-primario);
+    white-space: nowrap;
+    overflow: hidden;
+    width: 0;
+    animation: 
+        escribiendo 2.5s steps(14) 0.5s forwards,
+        parpadeoCursor 0.7s infinite alternate;
+}
+
+.subtitulo {
+    font-size: 1.35rem;
+    font-weight: 500;
+    color: var(--color-titulos);
+    margin-bottom: 20px;
+    line-height: 1.4;
+}
+
+.tagline {
+    display: inline-block;
+    margin-top: 20px;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--color-primario);
+    font-weight: 700;
+}
+
+/* Bloque Derecho: Foto limpia y contenida */
+.foto {
+    flex: 0.8;                          
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+/* Fondo decorativo estilizado detrás de la foto */
+.foto::before {
+    content: '';
+    position: absolute;
+    width: 280px;      /* Ajustado al tamaño de la nueva foto redonda */
+    height: 280px;     /* Ajustado al tamaño de la nueva foto redonda */
+    background: var(--degradado-wow);
+    border-radius: 50%; /* Redondo */
+    z-index: -1;
+    opacity: 0.2;
+    filter: blur(35px);
+}
+
+.foto img {
+    width: 250px;      /* Tamaño más compacto y controlado */
+    height: 250px;     /* Alto igual al ancho para asegurar un círculo perfecto */
+    object-fit: cover;                
+    border-radius: 50%; /* Hace la foto completamente redonda */ 
+    border: 2px solid var(--color-borde);
+    box-shadow: var(--sombra-premium);
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.foto:hover img {
+    transform: translateY(-5px); 
+    box-shadow: 0 15px 30px rgba(128, 83, 118, 0.2);          
+}
+
+/* =========================
+SECCIONES INTERMEDIAS 
+========================= */
+section {
+    padding: 120px 8% 80px 8%; 
+    max-width: 1400px;         
+    margin: 0 auto;
+}
+
+section:nth-of-type(even) {
+    background-color: var(--color-seccion-alt);
+    max-width: 100%;
+    padding-left: 8%;
+    padding-right: 8%;
+}
+
+/* Títulos con personalidad */
+h2 {
+    font-size: 2.8rem;
+    color: var(--color-texto);
+    margin-bottom: 50px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+h2::before {
+    content: '';
+    width: 8px;
+    height: 32px;
+    background: var(--degradado-wow);
+    border-radius: 4px;
+}
+
+/* =========================
+TARJETAS Y GRIDS EXPANSIVOS (Ajustados para los botones)
+========================= */
+.datos-grid, .proyectos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
+    gap: 30px;
+}
+
+article, .dato-card {
+    background: var(--color-tarjeta);
+    backdrop-filter: var(--blur-cristal);
+    -webkit-backdrop-filter: var(--blur-cristal);
+    border: 1px solid var(--color-borde);
+    border-radius: var(--radio-esquinas);
+    box-shadow: var(--sombra-premium);
+    padding: 40px;
+    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.4s ease;
+    
+    /* EL TRUCO: Convierte la tarjeta en columna flex para controlar su contenido */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Mantiene equilibrio interno si las tarjetas varían de altura */
+}
+
+article:hover, .dato-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(128, 83, 118, 0.12);
+}
+
+.dato-card h3 {
+    font-size: 1.25rem;
+    color: var(--color-titulos);
+    margin-bottom: 12px;
+}
+
+/* =========================
+BOTONES PREMIUM (Con separación corregida)
+========================= */
+.btn-proyecto, .btn-enviar {
+    display: inline-block;
+    align-self: flex-start; /* Evita que el botón se estire a lo ancho de la tarjeta */
+    margin-top: 30px;       /* ¡CORREGIDO! Mayor separación vertical respecto al texto */
+    padding: 12px 28px;
+    background: var(--degradado-wow);
+    color: #FFFFFF !important;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 6px 20px rgba(128, 83, 118, 0.25);
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.btn-proyecto:hover, .btn-enviar:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(128, 83, 118, 0.35);
+    filter: brightness(1.1);
+}
+/* =========================
+PÍLDORAS DE HABILIDADES
+========================= */
+.habilidades-lista {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    list-style: none;
+}
+
+.habilidades-lista li {
+    background: var(--color-tarjeta);
+    border: 1px solid var(--color-borde);
+    padding: 12px 26px;
+    border-radius: 50px;
+    font-weight: 500;
+    font-size: 0.9rem;
+    box-shadow: var(--sombra-premium);
+    transition: all 0.3s ease;
+}
+
+.habilidades-lista li:hover {
+    background: var(--degradado-wow);
+    color: #FFFFFF;
+    transform: translateY(-3px);
+}
+
+/* =========================
+FORMULARIO DE CONTACTO (Inputs Visibles y Contrastados)
+========================= */
+.formulario-contacto {
+    max-width: 700px; 
+    margin: 0 auto;
+    background: var(--color-tarjeta);
+    backdrop-filter: var(--blur-cristal);
+    -webkit-backdrop-filter: var(--blur-cristal);
+    border: 1px solid var(--color-borde);
+    border-radius: var(--radio-esquinas);
+    padding: 50px;
+    box-shadow: var(--sombra-premium);
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.input-group label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--color-texto);
+}
+
+/* SOLUCIÓN: Cuadritos con alto contraste y bordes legibles */
+.input-group input, .input-group textarea {
+    width: 100%;
+    padding: 16px;
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.9); /* Blanco sólido traslúcido de alto contraste */
+    border: 1.5px solid rgba(128, 83, 118, 0.25); /* Línea perimetral visible */
+    color: #2D252E; /* Texto interno oscuro nítido */
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.03); /* Le da profundidad al cuadrito */
+}
+
+/* Ajuste específico para el modo oscuro */
+body.dark-mode .input-group input, 
+body.dark-mode .input-group textarea {
+    background: rgba(20, 15, 22, 0.8); /* Fondo oscuro profundo */
+    border: 1.5px solid rgba(198, 166, 201, 0.3);
+    color: #F3EEF5;
+}
+
+.input-group input:focus, .input-group textarea:focus {
+    background: #FFFFFF;
+    border-color: var(--color-titulos);
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(128, 83, 118, 0.15);
+}
+
+body.dark-mode .input-group input:focus, 
+body.dark-mode .input-group textarea:focus {
+    background: #1A121B;
+    border-color: var(--color-primario);
+}
+
+/* =========================
+FOOTER
+========================= */
+footer {
+    background: var(--color-tarjeta);
+    backdrop-filter: var(--blur-cristal);
+    border-top: 1px solid var(--color-borde);
+    text-align: center;
+    padding: 45px 20px;
+}
+
+.redes-sociales {
+    margin-bottom: 15px;
+}
+
+.redes-sociales a {
+    margin: 0 15px;
+    color: var(--color-titulos);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.redes-sociales a:hover {
+    color: var(--color-primario);
+}
+
+/* =========================
+ANIMACIONES (Keyframes)
+========================= */
+@keyframes escribiendo {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@keyframes parpadeoCursor {
+    from { border-color: var(--color-primario); }
+    to { border-color: transparent; }
+}
+
+/* =========================
+RESPONSIVE DISPOSITIVOS MÓVILES
+========================= */
+@media (max-width: 992px) {
+    header { top: 0; right: 0; width: 100%; border-radius: 0; padding: 10px 0; }
+    .nav-contenedor { width: 100%; justify-content: space-between; }
+    
+    nav ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px; left: 0; width: 100%;
+        background: var(--color-fondo);
+        padding: 30px;
+        border-bottom: 1px solid var(--color-borde);
+        gap: 20px;
+    }
+    
+    nav ul.active { display: flex; }
+    .menu-toggle { display: block; }
+
+    #inicio {
+        flex-direction: column-reverse;
+        min-height: auto;
+        padding-top: 100px;
+    }
+
+    #inicio .texto {
+        padding: 40px 5%;
+        text-align: center;
+    }
+
+    #inicio h1 { font-size: 2.8rem; }
+    
+    .destaque { 
+        white-space: normal; 
+        border-right: none; 
+        width: auto; 
+        animation: none; 
+        -webkit-text-fill-color: initial; 
+        background: none; 
+        color: var(--color-titulos); 
+    }
+    
+    .foto img {
+        width: 100%;
+        max-width: 300px;
+        height: 380px;
+    }
+    
+    section { padding: 80px 5% 60px 5%; }
+    .formulario-contacto { padding: 30px; }
+}

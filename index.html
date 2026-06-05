@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio de Tailwind CSS para Estudiantes</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                    },
+                    colors: {
+                        marca: {
+                            gradientStart: '#C5915D', 
+                            gradientEnd: '#633C15',  
+                            textoOscuro: '#332011',   
+                            textoClaro: '#F5E6D3', // Ajustado ligeramente para mejor contraste sobre fondos oscuros   
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-[#EFDBB6] dark:bg-[#1E1610] flex flex-col items-center justify-center min-h-screen p-6 font-sans transition-colors duration-300">
+
+    <button id="theme-toggle" class="absolute top-6 right-6 p-3 bg-white dark:bg-stone-800 rounded-full shadow-lg border border-stone-200 dark:border-stone-700 text-xl transition-all hover:scale-110 active:scale-95">
+        🌙
+    </button>
+
+    <div class="relative w-full max-w-sm bg-white dark:bg-stone-900 rounded-3xl shadow-xl overflow-hidden transform transition duration-500 hover:scale-105 hover:shadow-2xl border border-stone-100 dark:border-stone-800">
+        
+        <div class="h-32 bg-gradient-to-r from-marca-gradientStart to-marca-gradientEnd relative">
+            <span class="absolute top-4 right-4 text-[11px] font-semibold uppercase tracking-wider px-2.5 py-1 rounded-full text-marca-textoClaro bg-stone-900/30 backdrop-blur-md border border-white/10 shadow-sm">
+                Disponible
+            </span>
+        </div>
+
+        <div class="absolute top-16 left-1/2 transform -translate-x-1/2">
+            <div class="w-28 h-28 bg-white dark:bg-stone-900 p-1.5 rounded-full shadow-lg">
+                <div class="w-full h-full rounded-full bg-gradient-to-br from-amber-100 to-amber-200 flex items-center justify-center border border-amber-300 overflow-hidden">
+                    <img src="img/logoVic.jpeg" alt="VO" class="w-full h-full rounded-full object-cover">
+                </div>
+            </div>
+        </div>
+
+        <div class="pt-20 pb-8 px-8 text-center">
+            
+            <h2 class="text-2xl font-bold text-marca-textoOscuro dark:text-marca-textoClaro tracking-tight">
+                Victoria Olmos
+            </h2>
+            <p class="text-xs font-bold text-amber-700 dark:text-amber-400 mt-1 uppercase tracking-wider">
+                Estudiante de Desarrollo Web
+            </p>
+            
+            <p class="text-stone-600 dark:text-stone-300 text-sm mt-4 leading-relaxed">
+                Apasionada por la tecnología, construyendo interfaces hermosas y funcionales usando HTML, CSS, JavaScript y Tailwind CSS.
+            </p>
+
+            <div class="mt-6">
+                <h3 class="text-xs font-bold text-stone-400 dark:text-stone-500 uppercase tracking-widest text-left mb-3">Habilidades</h3>
+                <div class="flex flex-wrap gap-2 justify-start">
+                    <span class="px-3 py-1 bg-amber-50 dark:bg-stone-800 text-amber-800 dark:text-amber-300 text-xs font-semibold rounded-full border border-amber-200/60 dark:border-stone-700 transition-colors hover:bg-amber-100 dark:hover:bg-stone-700 cursor-pointer">
+                        HTML5
+                    </span>
+                    <span class="px-3 py-1 bg-amber-50 dark:bg-stone-800 text-amber-800 dark:text-amber-300 text-xs font-semibold rounded-full border border-amber-200/60 dark:border-stone-700 transition-colors hover:bg-amber-100 dark:hover:bg-stone-700 cursor-pointer">
+                        CSS
+                    </span>
+                    <span class="px-3 py-1 bg-amber-50 dark:bg-stone-800 text-amber-800 dark:text-amber-300 text-xs font-semibold rounded-full border border-amber-200/60 dark:border-stone-700 transition-colors hover:bg-amber-100 dark:hover:bg-stone-700 cursor-pointer">
+                        Tailwind CSS
+                    </span>
+                    <span class="px-3 py-1 bg-amber-50 dark:bg-stone-800 text-amber-800 dark:text-amber-300 text-xs font-semibold rounded-full border border-amber-200/60 dark:border-stone-700 transition-colors hover:bg-amber-100 dark:hover:bg-stone-700 cursor-pointer">
+                        JavaScript
+                    </span>
+                    <span class="px-3 py-1 bg-amber-50 dark:bg-stone-800 text-amber-800 dark:text-amber-300 text-xs font-semibold rounded-full border border-amber-200/60 dark:border-stone-700 transition-colors hover:bg-amber-100 dark:hover:bg-stone-700 cursor-pointer">
+                        Git / GitHub
+                    </span>
+                </div>
+            </div>
+
+            <div class="mt-8 flex gap-3">
+                <a href="portafolio.html" class="flex-1 px-4 py-2.5 border border-stone-200 dark:border-stone-700 text-stone-700 dark:text-stone-300 text-sm font-medium rounded-xl hover:bg-stone-50 dark:hover:bg-stone-800 transition-colors text-center shadow-sm">
+                    Ver Portafolio
+                </a>
+                <a href="https://wa.me/qr/SF5LJDDJRPFSB1" class="flex-1 px-4 py-2.5 bg-gradient-to-r from-marca-gradientStart to-marca-gradientEnd text-white text-sm font-medium rounded-xl hover:opacity-90 shadow-md shadow-amber-900/20 hover:shadow-lg hover:shadow-amber-900/30 transition-all text-center">
+                    Contactar
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const boton = document.getElementById("theme-toggle");
+
+        // Comprobación inicial del estado guardado
+        if (localStorage.getItem("theme") === "dark") {
+            document.documentElement.classList.add("dark");
+            boton.textContent = "☀️";
+        } else {
+            document.documentElement.classList.remove("dark");
+            boton.textContent = "🌙";
+        }
+
+        boton.addEventListener("click", () => {
+            document.documentElement.classList.toggle("dark");
+
+            if (document.documentElement.classList.contains("dark")) {
+                localStorage.setItem("theme", "dark");
+                boton.textContent = "☀️";
+            } else {
+                localStorage.setItem("theme", "light");
+                boton.textContent = "🌙";
+            }
+        });
+    </script>
+
+</body>
+</html>

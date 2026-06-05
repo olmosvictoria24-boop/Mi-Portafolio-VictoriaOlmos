@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portafolio personal de Victoria Olmos">
+    <!-- Vinculación de fuentes consistentes -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Poppins:wght@300;400;500;600;700&display=swap"> 
+    <link rel="stylesheet" href="css/style.css">
+    <title>Portafolio - Personal</title>
+    <link rel="icon" href="img/logoVic.jpeg">
+</head>
+<body>
+
+    <!-- Encabezado Principal -->
+    <header>
+        <nav class="nav-contenedor">
+            <a href="index.html" class="logo-link">
+                <img src="img/logoVic.jpeg" alt="Perfil" class="icono-perfil">
+            </a>
+
+            <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menú">☰</button>
+
+            <ul id="menu">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#sobre-mi">Sobre Mí</a></li>
+                <li><a href="#datos-personales">Datos</a></li>
+                <li><a href="#proyectos">Proyectos</a></li>
+                <li><a href="#habilidades">Habilidades</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+                <li><button id="modo-oscuro" class="btn-theme" aria-label="Cambiar tema">🌙</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="inicio">
+            <div class="texto">
+                <h1 class="typing-container">
+                    Hola, soy <br>
+                    <span class="destaque">Victoria Olmos</span>
+                </h1>
+                <p class="subtitulo">Estudiante de Desarrollo de Software y amante de la tecnología.</p>
+                <p>Bienvenido a mi portafolio personal, donde comparto mis proyectos, habilidades y experiencia en el mundo del desarrollo web.</p>
+                <p class="tagline">Transformando ideas en experiencias web.</p>
+            </div>
+            <div class="foto">
+                <img src="img/fotoperfil.jpg" alt="Foto de perfil de Victoria Olmos">
+            </div>
+        </section>
+
+        <!-- Sección Sobre Mí -->
+        <section id="sobre-mi">
+            <h2>Sobre Mí</h2>
+            <article>
+                <p>Soy Victoria Olmos, estudiante de Desarrollo de Software en la Universidad Tecnológica de El Salvador. Me apasiona la creación de aplicaciones web y el aprendizaje continuo de nuevas tecnologías.</p>
+                <p>Disfruto diseñar interfaces atractivas y desarrollar soluciones que mejoren la experiencia de los usuarios. Actualmente trabajo con tecnologías como HTML, CSS, JavaScript, PHP y MySQL.</p>
+                <p>Además de la programación, me interesan el anime, el manga, el diseño web y la creación de proyectos que combinen creatividad y tecnología.</p>
+                <p>Mi objetivo es seguir creciendo como desarrolladora y participar en proyectos que me permitan aportar soluciones innovadoras y adquirir experiencia profesional.</p>
+            </article>
+        </section>
+
+        <!-- Datos Personales Actualizados -->
+        <section id="datos-personales">
+            <h2>Datos Personales</h2>
+            <div class="datos-grid">
+                <div class="dato-card">
+                    <h3>Ubicación</h3>
+                    <p>San Salvador Centro, El Salvador</p>
+                </div>
+                <div class="dato-card">
+                    <h3>Estudios</h3>
+                    <p>Técnico en Desarrollo de Software</p>
+                </div>
+                <div class="dato-card">
+                    <h3>Especialidad</h3>
+                    <p>Desarrollo Web</p>
+                </div>
+                <div class="dato-card">
+                    <h3>Correo Electrónico</h3>
+                    <p>olmosvictoria24@gmail.com</p>
+                </div>
+                <div class="dato-card">
+                    <h3>Teléfono</h3>
+                    <p>+503 7728-7945</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Proyectos -->
+        <section id="proyectos">
+            <h2>Mis Proyectos</h2>
+            <div class="proyectos-grid">
+                <article>
+                    <h3>Página Web Hobbies</h3>
+                    <p>Proyecto web enfocado en un blog de hobbies. Desarrollado con el fin de explorar estructuras dinámicas y estilización personalizada.</p>
+                    <p class="tech-stack">Tecnologías: HTML, CSS y JavaScript.</p>
+                    <a href="https://elizabethxp.github.io/Lunaris/" target="_blank" rel="noopener noreferrer" class="btn-proyecto">Ver Proyecto</a>
+                </article>
+
+                <article>
+                    <h3>Menu-Catalogo de Caferia</h3>
+                    <p>Sistema donde los clientes pueden ver el menú y realizar pedidos en tiempo real con el personal en base a la información disponible.</p>
+                    <p class="tech-stack">Tecnologías: PHP y MySQL.</p>
+                    <a href="#" target="_blank" rel="noopener noreferrer" class="btn-proyecto">Ver Proyecto</a>
+                </article>
+            </div>
+        </section>
+
+        <!-- Sección Habilidades -->
+        <section id="habilidades">
+            <h2>Habilidades</h2>
+            <ul class="habilidades-lista">
+                <li>HTML5</li>
+                <li>CSS3</li>
+                <li>JavaScript</li>
+                <li>PHP</li>
+                <li>MySQL</li>
+                <li>Git & GitHub</li>
+                <li>Bootstrap</li>
+            </ul>
+        </section>
+
+        <!-- Sección Contacto -->
+        <section id="contacto">
+            <h2>Contacto</h2>
+            <form action="#" method="POST" class="formulario-contacto">
+                <div class="input-group">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="email">Correo Electrónico:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="mensaje">Mensaje:</label>
+                    <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+                </div>
+
+                <button type="submit" class="btn-enviar">Enviar Mensaje</button>
+            </form>
+        </section>  
+    </main>
+
+    <!-- Pie de página -->
+    <footer>
+        <p>&copy; 2026 Victoria Olmos. Todos los derechos reservados.</p>
+        <div class="redes-sociales">
+            <a href="#" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a href="https://github.com/olmosvictoria24-boop" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a href="#" target="_blank" rel="noopener noreferrer">Instagram</a>
+        </div>
+    </footer>
+
+    <script>
+        if(localStorage.getItem("theme") === "dark"){
+            document.body.classList.add("dark-mode");
+        }
+    </script>
+    <script src="js/script.js"></script>
+</body>
+</html>
